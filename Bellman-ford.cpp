@@ -15,7 +15,7 @@ bool relaxtion(int u,int v,int w){
 }
 
 int bellmanford(){
-		memset(dis,0x3f3f3f3f3f3f3f3f,sizeof(dis));
+	memset(dis,0x3f3f3f3f3f3f3f3f,sizeof(dis));
 
     int ptr=-1;
     for(int i=0;i<n&&ptr;i++){//第 n 次還可以鬆弛，則有負環
@@ -32,7 +32,7 @@ int bellmanford(){
 }
 
 vector<int> findpath(){
-	  vector<int> cycle;
+	vector<int> cycle;
 
     int ptr=bellmanford();
     if(!ptr) return cycle;
