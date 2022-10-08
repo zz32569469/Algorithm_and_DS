@@ -1,7 +1,7 @@
 vector<int>edge[MXN];
 int deg[MXN];
 
-vector<int> topologic_sort(){
+vector<int> topology_sort(){
     vector<int>ret;
 
     queue<int>q;
