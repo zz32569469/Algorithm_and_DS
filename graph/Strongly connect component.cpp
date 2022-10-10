@@ -34,5 +34,5 @@ struct Scc{
         rDFS(v); nScc++;
       }
   }
-};//強連通分量(Strongly connect component)//kosaraju’s algorithm
+}scc;//強連通分量(Strongly connect component)//kosaraju’s algorithm
 //when use in 2-sat x->~y,y->~x,if(scc.bln[status[i][0]]>scc.bln[status[i][1]]) ans[i]=1;
