@@ -3,41 +3,23 @@
 
 //假設維護區間最小值
 
-int segtree[MXN>>2];
-int tag[MXN>>2];
+int segtree[MXN<<2];
+int a[MXN];
 
-void push(int i,int l,int r){
-   if(tag[i] != 0){ 
-       segtree[i] += tag[i];  
-       if(l != r){  
-           tag[cl(i)] += tag[i];
-           tag[cr(i)] += tag[i];
-       }
-       tag[i] = 0; 
-   }    
-}
-
-void pull(int i,int l,int r){
-    int mid = (l+r)/2;
-    push(cl(i),l,mid); push(cr(i),mid+1,r);
-    segtree[i] = min(segtree[cl(i)], segtree[cr(i)]);
-}
  
 void build(int i,int l,int r){//初始化，不一定要有
     if(l == r){ 
-        segtree[i] = arr[l];
+        segtree[i] = a[l];
         return;
     }
     int mid=(l+r)/2; 
     build(cl(i),l,mid); 
     build(cr(i),mid+1,r);
   
-    segtree[i]=min(segtree[cl(i)],segtree[cr(i)]);
+    segtree[i] = min(segtree[cl(i)], segtree[cr(i)]);
 }
  
 int query(int i,int l,int r,int ql,int qr){
-    push(i,l,r);
-    pull(i,l,r);
     if(ql <= l && r <= qr){ 
         return segtree[i];
     }
@@ -57,17 +39,5 @@ void update(int i,int l,int r,int pos,int val){//單點修改
     if(pos <= mid) update(cl(i),l,mid,pos,val);
     else update(cr(i),mid+1,r,pos,val);
  
-    segtree[i]=min(segtree[cl(i)],segtree[cr(i)]);
-}
-
-void update2(int i,int l,int r,int ql,int qr,int v){//區間修改
-    push(i,l,r);
-    if(ql<=l && r<=qr){
-        tag[i] += v;
-        return;
-    }
-    int mid=(l+r)/2;
-    if(ql<=mid)  update2(cl(i),l,mid,ql,qr,v);
-    if(qr> mid)  update2(cr(i),mid+1,r,ql,qr,v);
-    pull(i,l,r);
+    segtree[i] = min(segtree[cl(i)], segtree[cr(i)]);
 }
