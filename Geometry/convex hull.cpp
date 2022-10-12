@@ -21,7 +21,7 @@ struct pt{
         return x!=a.x||y!=a.y;
     }
 
-    friend ll cross(pt &o,pt &a,pt &b){
+    friend ll cross(pt &o,pt &a,pt &b){//外積，小於 0 是逆時針
         pt lhs=o-a; 
         pt rhs=o-b;
         return lhs.x*rhs.y-lhs.y*rhs.x;
@@ -47,7 +47,7 @@ void convex_hull(){
         }
         stk.push_back(a[i]);
         top++;
-    }
+    }//下凸包
 
     for(int i=n-2,tt=top+1;i>=0;i--){
          while(top>=tt&&cross(stk[top-2],stk[top-1],a[i])<0){
@@ -56,6 +56,6 @@ void convex_hull(){
         }
         stk.push_back(a[i]);
         top++;
-    }
+    }//上凸包
     stk.pop_back();
 }
