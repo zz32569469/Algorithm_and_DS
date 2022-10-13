@@ -16,4 +16,4 @@ void update(int x,int v){
         bit[x] += v;
         x += lowbit(x);
     }
-}
+}//單點修改，區間查詢。//區間修改，單點查詢。
