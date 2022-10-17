@@ -70,7 +70,7 @@ void update2(int i,int l,int r,int ql,int qr,int v){//區間修改
         return;
     }
     int mid=(l+r)/2;
-    if(ql<=mid)  update2(cl(i),l,mid,ql,qr,v,op);
-    if(qr> mid)  update2(cr(i),mid+1,r,ql,qr,v,op);
+    if(ql<=mid)  update2(cl(i),l,mid,ql,qr,v);
+    if(qr> mid)  update2(cr(i),mid+1,r,ql,qr,v);
     pull(i,l,r);
 }
