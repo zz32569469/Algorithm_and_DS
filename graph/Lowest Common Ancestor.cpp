@@ -13,3 +13,11 @@ void Count_Anc(int n){
         }
    }
 }
+
+int lift(int x,int k){//計算 x 的 k 倍祖先
+    int ret=x;
+    for(int i=0;i<LgN;i++){
+        if((k>>i)&1) x=anc[x][i];
+    }
+    return ret;
+}
