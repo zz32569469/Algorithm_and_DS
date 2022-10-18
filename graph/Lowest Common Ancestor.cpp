@@ -2,7 +2,7 @@ const int LgN=31;//log2(1e9)+1;
 
 int fa[MXN],anc[MXN][LgN+5];
 
-void Count_LCA(int n){
+void Count_Anc(int n){
   for(int i=1;i<=n;i++){
         anc[i][0]=fa[i];
    }
