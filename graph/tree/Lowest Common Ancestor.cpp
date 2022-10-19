@@ -17,6 +17,7 @@ void dfs(int x){//計算時間戳記
 }
 
 void Count_Anc(int n,int rt){//點數量，根節點
+    fa[rt]=rt;
     dfs(rt);
 
     for(int i=1;i<=n;i++){
