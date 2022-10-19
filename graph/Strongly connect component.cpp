@@ -21,7 +21,7 @@ struct Scc{
     vst[u] = 1; bln[u] = nScc;
     for (auto v : rE[u]) if (!vst[v]) rDFS(v);
   }
-  void solve(){  // 跑 kosaraju
+  void solve(){  // 跑 kosaraju，變成有向無環圖
     nScc = 0;
     vec.clear();
     FZ(vst);
