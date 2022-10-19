@@ -36,6 +36,6 @@ int MST(int n){
         }
     }
   
-    if(cnt!=n-1) return -1;//邊數量< n-1 則無法形成 Minimum Spanning Tree
+    if(cnt!=n-1) return -1;//邊數量 < n-1 則無法形成 Minimum Spanning Tree
     else return sum; // 回傳 Minimum Spanning Tree 的總權重
 }
