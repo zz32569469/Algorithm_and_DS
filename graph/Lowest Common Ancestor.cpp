@@ -2,6 +2,10 @@ const int LgN=31;//log2(1e9)+1;
 
 int fa[MXN],anc[MXN][LgN+5];
 
+bool isAncestor(int u,int v){
+    return tin[u]<=tin[v]&&tout[u]>=tout[v];
+}
+
 void Count_Anc(int n){
   for(int i=1;i<=n;i++){
         anc[i][0]=fa[i];
