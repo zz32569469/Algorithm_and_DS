@@ -6,12 +6,12 @@ bool vst[MXN];
 int tt=1;
 
 void dfs(int x){//計算時間戳記
-    if(vst[x]) return ;
     vst[x]=1;
     tin[x]=tt++;
     for(auto u:edge[x]){
         if(vst[u]) continue;
         dfs(u);
+        fa[u]=x;
     }
     tout[x]=tt++;
 }
