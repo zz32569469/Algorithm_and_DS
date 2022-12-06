@@ -36,7 +36,7 @@ struct PalT{
         fac[n]=min(fac[n],getmin(v));
     return ++cnt[lst],lst;
   }
-  void init(const char *_s){
+  void init(const string &_s){
     tot=lst=n=0;
     newNode(0,1),newNode(-1,1);
     for(;_s[n];) s[n+1]=_s[n],++n,state[n-1]=push();
