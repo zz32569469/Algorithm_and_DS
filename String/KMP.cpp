@@ -1,7 +1,8 @@
 int failure[MXN];  //儲存以第i個為結尾的次長相同前綴後綴
+vector<int>ans;
 
 void build_failure(string& w){
-    for(int i=1,j=fauilre[0]=-1;i<w.size();i++){
+    for(int i=1,j=failure[0]=-1;i<w.size();i++){
         while(j>=0 && w[i] != w[j+1]){ //當不相同無法匹配
             j = failure[j];
         }
