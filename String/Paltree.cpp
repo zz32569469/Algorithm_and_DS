@@ -2,6 +2,7 @@
 // num[s]是有幾個回文後綴
 // cnt[s]是這個回文子字串在整個字串中的出現次數
 // fail[s]是他長度次長的回文後綴，aba的fail是a
+// nxt[i][0~25字母j]:狀態i，下個字母為j的狀態為何->j的狀態 包含 狀態i
 const int MXN = 1000010;
 struct PalT{
   int nxt[MXN][26],fail[MXN],len[MXN]; 
