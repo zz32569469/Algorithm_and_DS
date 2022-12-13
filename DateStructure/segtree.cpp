@@ -60,7 +60,7 @@ void update(int i,int l,int r,int pos,int val){//單點修改
     if(pos <= mid) update(cl(i),l,mid,pos,val);
     else update(cr(i),mid+1,r,pos,val);
  
-    segtree[i] = min(segtree[cl(i)], segtree[cr(i)]);
+    segtree[i] = segtree[cl(i)] + segtree[cr(i)];
 }
 
 void update2(int i,int l,int r,int ql,int qr,int v){//區間修改
