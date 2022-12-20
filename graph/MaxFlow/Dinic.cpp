@@ -3,7 +3,7 @@
 
 struct Dinic{
   struct Edge{ int v,f,re; };//f 為剩餘流量
-  int n,s,t,level[MXN];
+  int n,s,t,level[MXN];//level[x]==-1 此點於最小割屬於 s 集合
   vector<Edge> E[MXN];
   void init(int _n, int _s, int _t){//點的數量，源點，匯點
     n = _n; s = _s; t = _t;
