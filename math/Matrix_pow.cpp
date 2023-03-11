@@ -17,10 +17,10 @@ vector<vector<int>> mat_pow(vector<vector<int>> base,int x,int m){
     int n=base.size();
     vector<vector<int>> res(n,vector<int>(n));
 
-    res[0][0]=res[1][1]=1;
+    res[1][0]=1;
 
     while(x){
-        if(x&1) res=mat_mul(res,base,m);
+        if(x&1) res=mat_mul(base,res,m);
         base=mat_mul(base,base,m);
         x>>=1;
     }
