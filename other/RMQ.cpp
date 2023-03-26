@@ -2,7 +2,7 @@ int a[MXN];
 int dp[MXN][30],flg[MXN];
 
 void init(){
-    for(int i=1;i<=n;i++) dp[i][0]=len[i];
+    for(int i=1;i<=n;i++) dp[i][0]=a[i];
 
     for(int i=1;i<=flg[n];i++){
         for(int j=1;j+(1<<i)-1<=n;j++){
