@@ -39,26 +39,30 @@ bool check(ld x){
     return sum>=k;
 }
 
+void solve(){
+    cin>>n>>m>>k;
+
+    for(int i=0;i<n;i++) cin>>a[i]>>b[i];
+    for(int i=0;i<m;i++) cin>>c[i]>>d[i];
+
+    ld l=0.0,r=1.0;
+    while(r-l>EXP){
+        ld mid=(l+r)/2.0;
+
+        if(check(mid)) l=mid;
+        else r=mid;
+    }
+
+    cout<<fixed<<setprecision(10)<<l*100;
+}
+
 signed main(){
     ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 
     int t=1;
     //cin>>t;
     while(t--){
-        cin>>n>>m>>k;
-
-        for(int i=0;i<n;i++) cin>>a[i]>>b[i];
-        for(int i=0;i<m;i++) cin>>c[i]>>d[i];
-
-        ld l=0.0,r=1.0;
-        while(r-l>EXP){
-            ld mid=(l+r)/2.0;
-
-            if(check(mid)) l=mid;
-            else r=mid;
-        }
-
-        cout<<fixed<<setprecision(10)<<l*100<<'\n';
-
+        solve();
+        cout<<'\n';
     }
 }
