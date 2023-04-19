@@ -40,7 +40,7 @@ int mul(int x,int hst){
 }
 
 void solve(){
-    int st=0;
+    int head=0;
     int x=1;
 
     int q;
@@ -57,9 +57,9 @@ void solve(){
             x%=MOD;
         }
         else if(op==2){
-            x-=mul(st,s.size()-1-st);
+            x-=mul(head,s.size()-1-head);
             x=(x+MOD)%MOD;
-            st++;
+            head++;
         }
         else {
             cout<<x<<'\n';
