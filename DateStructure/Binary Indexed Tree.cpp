@@ -12,7 +12,7 @@ int query(int x){
 }
 
 void update(int x,int v){
-    while(x<=n){
+    while(x<=MXN){
         bit[x] += v;
         x += lowbit(x);
     }
