@@ -9,7 +9,7 @@ struct Dinic{
     n = _n; s = _s; t = _t;
     for (int i=0; i<n; i++) E[i].clear();//0-base
   }
-  void add_edge(int u, int v, int f){//加入一條點 u 連到點 v 流量限制為 w 的邊
+  void add_edge(int u, int v, int f){//加入一條點 u 連到點 v 流量限制為 f 的邊
     E[u].PB({v,f,SZ(E[v])});
     E[v].PB({u,0,SZ(E[u])-1});
   }
