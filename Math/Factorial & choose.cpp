@@ -3,7 +3,7 @@ const ll MXN=5e3+5;
 
 ll fac[MXN],inv[MXN],invf[MXN];
 void initf(){
-    fac[1]=fac[0]=1;
+	fac[1]=fac[0]=1;
 	inv[0]=inv[1]=1;
     invf[0]=invf[1]=1;
     for(int i=2;i<MXN;i++){
