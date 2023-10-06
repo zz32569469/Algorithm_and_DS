@@ -2,22 +2,32 @@
 #define cr(x) x*2+1//1-base
 
 struct segtree{//假設維護區間和
-    vector<int>segtree, a, tag;
+    struct node{
+        int val;
+    };
+    vector<node>tree, 
+    vector<int>a, tag;
     int n, ql, qr, v;
 
     void init(int n){//初始化及設定 a 
-        segtree.resize(n<<2+1);
+        tree.resize(n<<2);
         a.resize(n+1);
-        tag.resize(n<<2+1);
+        tag.resize(n<<2);
     }
 
     void data_update(int i){//如何更新資料
-        segtree[i] = segtree[cl(i)] + segtree[cr(i)];
+        tree[i].val = tree[cl(i)].val + tree[cr(i)].val;
+    }
+
+    node data_merge(node l, node r){
+        node ret;
+        ret.val=l.val+r.val;
+        return ret;
     }
 
     void push(int i, int l, int r){
         if(tag[i] != 0){
-            segtree[i] += tag[i]*(r-l+1); 
+            tree[i] += tag[i]*(r-l+1); 
             if(l != r){ 
                 tag[cl(i)] += tag[i];
                 tag[cr(i)] += tag[i];
@@ -34,27 +44,35 @@ struct segtree{//假設維護區間和
     }
 
 
-    void build(int i, int l, int r){//設定 segtree ，不一定要有
+    void build(int i, int l, int r){//設定 tree ，不一定要有
         if(l == r){ 
-            segtree[i] = a[l];
+            tree[i].val = a[l];
             return;
         }
         int mid=(l+r)/2; 
         build(cl(i), l, mid); 
         build(cr(i), mid+1, r);
-    
         data_update(i);
     }
     
-    int query(int i, int l, int r){
+    node query(int i, int l, int r){
         push(i, l, r);
         
         if(ql <= l && r <= qr){ 
-            return segtree[i];
+            return tree[i];
         }
-        int mid=(l+r)/2,  ret=0;
-        if(ql<=mid) ret+=query(cl(i), l, mid);
-        if(qr> mid) ret+=query(cr(i), mid+1, r);
+        int mid=(l+r)/2;
+
+        node retl, retr, ret;
+        bool okl=0, okr=0;
+
+        if(ql<=mid) retl=query(cl(i), l, mid), okl=1;
+        if(qr> mid) retr=query(cr(i), mid+1, r), okr=1;
+
+        if(okl && okr) ret=data_merge(retl, retr);
+        else if(okl) ret=retl;
+        else ret=retr;
+
         pull(i, l, r);
         return ret;
     }
@@ -73,16 +91,12 @@ struct segtree{//假設維護區間和
 
     void Build(){build(1, 1, n);}
     
-    int Query(int _ql, int _qr){//詢問
+    node Query(int _ql, int _qr){//詢問
         ql=_ql, qr=_qr;
         return query(1, 1, n);
     }
 
     void Update(int _v, int _ql, int _qr){//修改
-        v=_v, ql=_ql, qr=_qr;
-        update(1, 1, n);
-    }
-}seg_tree;//1-base
         v=_v, ql=_ql, qr=_qr;
         update(1, 1, n);
     }
