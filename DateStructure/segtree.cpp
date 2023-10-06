@@ -1,7 +1,5 @@
 #define cl(x) x*2
 #define cr(x) x*2+1//1-base
-  
-const int MXN = 2e5+5; 
 
 struct segtree{//假設維護區間和
     vector<int>segtree, a, tag;
