@@ -1,27 +1,7 @@
 #define cl(x) x*2
 #define cr(x) x*2+1//1-base
-
-#include<bits/stdc++.h> 
-#define ll long long 
-#define ld long double 
-#define int long long 
-#define endl '\n'; 
-#define cl(x) x*2 
-#define cr(x) x*2+1//1-base 
-#define lowbit(x) x&(-x) 
-#define PB push_back 
-#define SZ(x) (int)x.size() 
-#define FZ(x) memset(x,  0,  sizeof(x)) 
-#define all(x) x.begin(), x.end() 
-  
-using namespace std; 
   
 const int MXN = 2e5+5; 
-const int INF = 0x3f3f3f3f3f3f3f3f; 
-const ll MOD = 998244353; 
-const int LgN = log2(1e6)+1; 
-const int P = 37; 
-const ld EXP = 1e-11;
 
 struct segtree{//假設維護區間和
     int segtree[MXN<<2], a[MXN], tag[MXN<<2];
@@ -99,21 +79,3 @@ struct segtree{//假設維護區間和
         update(1, 1, n);
     }
 }seg_tree;//1-base
-
-void solve(){
-    
-
-
-}
-
-signed main() { 
-    ios::sync_with_stdio(0); cin.tie(0); cout.tie(0); 
- 
-    int t = 1; 
-    //cin >> t;
-
-    while(t--){
-        solve(); 
-        cout<<'\n'; 
-    } 
-}
