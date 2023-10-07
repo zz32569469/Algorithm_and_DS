@@ -2,7 +2,7 @@ int mypow(int x, int y ,int mod = MOD) {
     x %= mod;
     int res = 1 % mod;
     while(y){
-        if(y & 1) {
+        if(y&1) {
             res = res * x % mod;
         }
         y >>= 1;
