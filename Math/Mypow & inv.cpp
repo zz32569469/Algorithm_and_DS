@@ -1,16 +1,18 @@
-int mypow(int x, int y ,int mod = MOD) {
-    x %= mod;
-    int res = 1 % mod;
+const int MOD = 998244353; 
+
+int mypow(int x, int y, int mod=MOD) {
+    x%=mod;
+    int ret=1;
     while(y){
         if(y&1) {
-            res = res * x % mod;
+            ret=ret*x%mod;
         }
-        y >>= 1;
-        x = x * x % mod;
+        y>>=1;
+        x=x*x%mod;
     }
-    return res;
+    return ret;
 }
 
 int get_inv(int x) {
-    return mypow(x , MOD - 2);
+    return mypow(x ,MOD - 2);
 }
