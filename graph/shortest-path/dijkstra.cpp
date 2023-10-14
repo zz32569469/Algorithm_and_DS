@@ -14,7 +14,7 @@ bool relaxtion(int u,int v,int w){
 }
 
 void dijkstra(int source){//原點
-		memset(dis,INF,sizeof(dis));
+	memset(dis,INF,sizeof(dis));
     dis[source]=0;
     priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>>pq;
 
