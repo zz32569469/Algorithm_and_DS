@@ -6,7 +6,10 @@ tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> 
 定義一顆紅黑樹
 int 關鍵字類型
 null_type無映射
-less<int> 從小到大排序
+less<int> 從小到大排序（去重）
+greater<int> 從大到小排序（去重）
+less_equal<int> 從小到大排序
+greater_equal<int> 從大到小排序
 rb_tree_tag 紅黑樹（splay_tree_tag）
 tree_order_statistics_node_update結點更新
 插入t.insert();
