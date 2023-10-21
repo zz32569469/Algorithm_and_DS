@@ -7,7 +7,7 @@ struct dijkstra{
     };
 
     int dis[MXN];//原點到其他點的最短距離
-    bool vst[MXN];
+    bool vst[MXN]={};
     vector<info>edge[MXN];
 
     void add_edge(int u, int v, int w){ //加入邊
