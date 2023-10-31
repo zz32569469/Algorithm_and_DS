@@ -1,8 +1,14 @@
 struct disjoint_set{
-    const static int MXN=2e5+5;
-    int f[MXN], cnt[MXN];//屬於哪個集合，集合 x 有幾個人
+    vector<int>f, cnt;//屬於哪個集合，集合 x 有多少元素
 
-    void init(int n) {for(int i=1;i<=n;i++) f[i]=i, cnt[i]=1;}
+    void init(int n){
+        f.resize(n+1);
+        cnt.resize(n+1);
+        for(int i=0;i<=n;i++){
+            f[i]=i;
+            cnt[i]=1;
+        }
+    }
 
     int find(int x){
         if(x==f[x]) return f[x];
@@ -16,5 +22,13 @@ struct disjoint_set{
         cnt[y]=0;
 
         if(y!=x) f[y]=x;
+    }
+
+    bool in_the_same_set(int x, int y){//判斷 x, y是否為同一集合
+        return find(x)==find(y);
+    }
+
+    int get_set_size(int x){ // 判斷 x 所在的集合大小
+        return cnt[find(x)];
     }
 };
