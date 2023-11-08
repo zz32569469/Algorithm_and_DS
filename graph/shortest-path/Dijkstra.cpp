@@ -22,7 +22,7 @@ struct dijkstra{
         return 0;
     }
 
-    int solve(int src, int dst){//原點
+    int solve(int src, int dst){//起點, 終點
         memset(dis,INF,sizeof(dis));
         dis[src]=0;
         priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>>pq;
