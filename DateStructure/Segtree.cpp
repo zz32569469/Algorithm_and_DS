@@ -91,7 +91,10 @@ struct segtree{//假設維護區間和
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    void Build(){build(1, 1, n);}
+    void Build(int n){
+        init(n); 
+        build(1, 1, n);
+    }
     
     node Query(int _ql, int _qr){//詢問
         ql=_ql, qr=_qr;
