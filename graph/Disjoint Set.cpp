@@ -32,7 +32,13 @@ struct disjoint_set{
         return cnt[find(x)];
     }
 
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     void MERGE(int x, int y){       // MERGE
         if(!in_the_same_set(x, y)) merge(x, y);
+    }
+
+    int FIND(int x){ //FIND
+        return find(x);
     }
 };
