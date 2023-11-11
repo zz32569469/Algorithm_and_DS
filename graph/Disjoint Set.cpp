@@ -31,4 +31,8 @@ struct disjoint_set{
     int get_set_size(int x){ // 判斷 x 所在的集合大小
         return cnt[find(x)];
     }
+
+    void MERGE(int x, int y){       // MERGE
+        if(!in_the_same_set(x, y)) merge(x, y);
+    }
 };
