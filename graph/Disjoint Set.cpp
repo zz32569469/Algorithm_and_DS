@@ -12,8 +12,8 @@ struct disjoint_set{
     }
 
     void merge(int x,int y){ //合併集合，將 y 集合合併到 x 集合
-        y=find(y), x=find(x);
-        if(y!=x) f[y]=x;
+        int rt_y=find(y), rt_x=find(x);
+        if(rt_y!=rt_x) f[rt_y]=rt_x;
     }
 
     bool in_the_same_set(int x, int y){//判斷 x, y是否為同一集合
