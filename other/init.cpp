@@ -24,7 +24,6 @@ const ld EXP = 1e-11;
  
 void solve(){
     
-    
 }
  
 signed main(){ 
