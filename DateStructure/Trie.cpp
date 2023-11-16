@@ -36,9 +36,9 @@ struct trie{
             if(now->nxt[i-'a'] == nullptr){
                 return 0;
             }
-        now = now->nxt[i-'a'];
+            now = now->nxt[i-'a'];
+        }
+        return now->cnt;
     }
-    return now->cnt;
-}
 
 };//字典樹, a-z , O(|s|)
