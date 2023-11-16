@@ -1,6 +1,6 @@
 struct trie{
     trie *nxt[26];
-    int cnt, sz;
+    int cnt, sz;//s 有幾個，有幾個有 prefix s 
     trie(){
         memset(nxt ,0, sizeof(nxt));
         cnt=sz=0;
