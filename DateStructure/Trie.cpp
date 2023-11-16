@@ -1,7 +1,7 @@
 struct trie{
     trie *nxt[26];
-    int cnt;    //紀錄有多少個數字以此節點結尾
-    int sz;     //有多少數字的前綴包括此節點
+    int cnt;    //紀錄有多少個字串以此節點結尾
+    int sz;     //有多少字串的前綴包括此節點
     trie(){
         memset(nxt ,0, sizeof(nxt));
         cnt=sz=0;
