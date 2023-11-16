@@ -5,7 +5,7 @@ struct segtree{//假設維護區間和
     struct node{
         int val;
     };
-    vector<node>tree, 
+    vector<node>tree;
     vector<int>a, tag;
     int n, ql, qr, v;
 
