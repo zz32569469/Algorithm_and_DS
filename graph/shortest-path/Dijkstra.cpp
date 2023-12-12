@@ -43,6 +43,6 @@ struct dijkstra{
         }
 
         return dis[dst];
-    }//dijkstra 無負邊權 O(NlogN+M)
+    }//dijkstra 無負邊權 O(MlogN+N)
 
 };
