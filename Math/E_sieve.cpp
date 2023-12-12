@@ -9,9 +9,7 @@ struct E_sieve{
         for(int i=2;i<=n;i++){
             if(!isPrime[i]){
                 prime.PB(i);
-                for(int j=i;j*i<=n;j++){
-                    isPrime[i*j]=1;
-                }
+                for(int j=i;j*i<=n;j++) isPrime[i*j]=1;
             }
         }
     }
