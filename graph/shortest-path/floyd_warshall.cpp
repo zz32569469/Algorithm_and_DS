@@ -1,6 +1,7 @@
 int dis[MXN][MXN];// 全點對最短路徑
 
-void floyd_warshall(){
+void floyd_warshall(int n){
+    memset(dis, sizeof(dis), INF);
     for(int i=1;i<=n;i++){
         dis[i][i]=0;
     }
