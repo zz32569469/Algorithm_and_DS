@@ -1,4 +1,4 @@
 # Coding
 There's nothing nwo.
 
-just about some algorithm or data structrue.
+Just about some algorithm or Data structrue.
