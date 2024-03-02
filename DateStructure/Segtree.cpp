@@ -16,18 +16,18 @@ struct segtree{//假設維護區間和
     }
 
     void data_update(int i){//如何更新資料
-        tree[i].val = tree[cl(i)].val + tree[cr(i)].val;
+        tree[i].val = tree[cl(i)].val + tree[cr(i)].val;    //改這裡
     }
 
-    node data_merge(node l, node r){
+    node data_merge(node l, node r){    //回傳
         node ret;
-        ret.val=l.val+r.val;
+        ret.val=l.val+r.val;    //改這裡
         return ret;
     }
 
     void push(int i, int l, int r){
         if(tag[i] != 0){
-            tree[i] += tag[i]*(r-l+1); 
+            tree[i] += tag[i]*(r-l+1); //改這裡
             if(l != r){ 
                 tag[cl(i)] += tag[i];
                 tag[cr(i)] += tag[i];
@@ -46,7 +46,7 @@ struct segtree{//假設維護區間和
 
     void build(int i, int l, int r){//設定 tree ，不一定要有
         if(l == r){ 
-            tree[i].val = a[l];
+            tree[i].val = a[l]; //改這裡
             return;
         }
         int mid=(l+r)/2; 
